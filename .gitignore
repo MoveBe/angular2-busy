@@ -14,3 +14,6 @@ build/busy.js
 # AOT files
 *.ngsummary.json
 *.ngfactory.ts
+
+# IDE files
+.idea

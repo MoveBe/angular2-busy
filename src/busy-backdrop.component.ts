@@ -21,6 +21,7 @@ const timing = '.3s ease';
              *ngIf="isActive()">
         </div>
     `,
+    styleUrls: ['./busy-backdrop.component.scss'],
     animations: [
         trigger('fadeInOut', [
             transition('void => *', [

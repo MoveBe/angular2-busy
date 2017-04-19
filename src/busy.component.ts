@@ -31,9 +31,11 @@ export interface IBusyContext {
     selector: 'ng-busy',
     template: `
         <div [class]="wrapperClass" *ngIf="isActive()" @flyInOut>
-            <ng-container *ngComponentOutlet="TemplateComponent; ngModuleFactory: nmf;"></ng-container>
+            <ng-container *ngComponentOutlet="TemplateComponent; ngModuleFactory: nmf;">
+            </ng-container>
         </div>
     `,
+    styleUrls: ['./busy.component.scss'],
     animations: [
         trigger('flyInOut', [
             transition('void => *', [
@@ -48,10 +50,10 @@ export interface IBusyContext {
 })
 export class BusyComponent implements DoCheck, OnDestroy {
     TemplateComponent;
-    private nmf: NgModuleFactory<any>;
     wrapperClass: string;
     template: string;
     message: string;
+    private nmf: NgModuleFactory<any>;
     private lastMessage: string;
 
     constructor(
